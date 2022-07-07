@@ -1,16 +1,19 @@
-# tnews
+# **TNews**
 
-A new Flutter project.
+TNews is a news app which delivers Technology related headlines
+## Features
 
-## Getting Started
+---
+- Delivers Tech related headlines
+- Search for a topic or keyword and get news related to it
 
-This project is a starting point for a Flutter application.
+## Screenshots
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<p>
+<img src="screenshots/1.png" width="300"/> <img src="screenshots/2.png" width="300"/>
+<img src="screenshots/3.png" width="300"> 
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+</p>

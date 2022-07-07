@@ -21,7 +21,7 @@ class appbar extends StatelessWidget implements PreferredSizeWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               boldText(text: 'T', size: 20, color: AppColors.primary),
-              modifiedText(text: 'Newz', size: 20, color: AppColors.lightwhite)
+              modifiedText(text: 'News', size: 20, color: AppColors.lightwhite)
             ],
           )),
       centerTitle: true,
