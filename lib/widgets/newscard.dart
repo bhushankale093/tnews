@@ -1,0 +1,75 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
+import 'package:tnews/utility/colors.dart';
+import 'package:tnews/utility/text.dart';
+import 'package:tnews/widgets/bottomsheet.dart';
+import 'components.dart';
+
+class NewsCard extends StatelessWidget {
+  final String imageurl, title, time, description, url;
+  const NewsCard(
+      {Key? key,
+      required this.imageurl,
+      required this.title,
+      required this.time,
+      required this.description,
+      required this.url})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    var w = MediaQuery.of(context).size.width;
+    return Column(
+      children: [
+        InkWell(
+          onTap: () {
+            showMyBottomSheet(context, title, description, imageurl, url);
+          },
+          child: Container(
+            padding: EdgeInsets.all(20),
+            margin: EdgeInsets.only(left: 10, right: 10, top: 5),
+            width: w,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+              color: AppColors.lightBlack,
+            ),
+            child: Row(
+              children: [
+                CachedNetworkImage(
+                  imageUrl: imageurl,
+                  imageBuilder: (context, imageProvider) => Container(
+                    width: 60,
+                    height: 60,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: imageProvider, fit: BoxFit.cover),
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.yellow),
+                  ),
+                  placeholder: (context, url) =>
+                      CircularProgressIndicator(color: AppColors.primary),
+                  errorWidget: (context, url, error) => Icon(Icons.error),
+                ),
+                SizedBox(width: 8),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      modifiedText(
+                          color: AppColors.black, size: 16, text: title),
+                      SizedBox(height: 5),
+                      modifiedText(
+                          color: AppColors.black, size: 12, text: time),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        DividerWidget()
+      ],
+    );
+  }
+}
